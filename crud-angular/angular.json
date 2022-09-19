@@ -8,11 +8,8 @@
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss"
-        },
-        "@schematics/angular:application": {
-          "strict": true
         }
-      }, 
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -110,6 +107,6 @@
     }
   },
   "cli": {
-    "analytics": "6c1939f6-406f-4aad-95cc-2320dcc6fa02"
+    "analytics": "75063909-cb4f-473e-988c-e8ffcaafc660"
   }
 }
