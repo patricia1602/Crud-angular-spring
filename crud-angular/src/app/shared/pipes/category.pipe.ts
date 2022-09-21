@@ -12,5 +12,5 @@ export class CategoryPipe implements PipeTransform {
     }
     return 'code';
   }
-  
+
 }
