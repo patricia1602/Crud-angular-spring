@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import com.leona.crudspring.model.Course;
 
 @Repository
-public interface CourseRepository extends JpaRepository<Long, Course> {
+public interface CourseRepository extends JpaRepository<Course, Long> {
     
     }
 
