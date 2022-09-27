@@ -1,10 +1,9 @@
-const proxy_config = [
+const PROXY_CONFIG = [
   {
     context: ['/api'],
-    target: ['http://localhost:8080/'],
+    target: 'http://localhost:8080/',
     secure: false,
     logLevel: 'debug',
     }
 ]
-
-module.exports = proxy_config;
+module.exports = PROXY_CONFIG;
