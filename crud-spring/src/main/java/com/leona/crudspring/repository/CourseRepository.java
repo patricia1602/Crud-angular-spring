@@ -9,4 +9,3 @@ import com.leona.crudspring.model.Course;
 public interface CourseRepository extends JpaRepository<Course, Long> {
     
     }
-
