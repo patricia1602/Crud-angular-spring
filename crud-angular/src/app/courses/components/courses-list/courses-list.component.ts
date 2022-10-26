@@ -15,9 +15,9 @@ export class CoursesListComponent implements OnInit {
   
   readonly displayedColumns = ['name', 'category', 'actions'];
 
-  constructor() {}
+  constructor() { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   onAdd() {
     this.add.emit(true);
@@ -30,4 +30,5 @@ export class CoursesListComponent implements OnInit {
   onDelete(course: Course) {
     this.remove.emit(course);
   }
+  
 }

@@ -15,10 +15,11 @@ import { CoursesService } from '../../services/courses.service';
   styleUrls: ['./courses.component.scss'],
 })
 export class CoursesComponent implements OnInit {
+  //[x: string]: any;
 
   courses$: Observable<Course[]> | null = null;
   //courses: Course[] = [];
-  displayedColumns = ['name', 'category', 'actions'];
+  //displayedColumns = ['name', 'category', 'actions'];
 
   //coursesService : CoursesService;
 
@@ -27,7 +28,7 @@ export class CoursesComponent implements OnInit {
     public dialog: MatDialog,
     private router: Router,
     private route: ActivatedRoute,
-    private snackbar: MatSnackBar
+    private snackBar: MatSnackBar
   ) {
     //this.courses= [];
     //this.coursesService= new CoursesService ();
@@ -36,19 +37,19 @@ export class CoursesComponent implements OnInit {
     
     refresh() {
     this.courses$ = this.coursesService.list()
-    .pipe(
-      catchError(error => {
-        this.onError('Erro ao carregar cursos.');
-        return of([]);
+       .pipe(
+          catchError(error => {
+            this.onError('Erro ao carregar cursos.');
+              return of([]);
       })
-    );
+   );
 
     //this.coursesService.list().subscribe(courses => this.courses = courses);
   }
 
   onError(errorMsg: string) {
     this.dialog.open(ErrorDialogComponent, {
-      data: errorMsg,
+      data: errorMsg
     });
   }
 
@@ -66,10 +67,10 @@ export class CoursesComponent implements OnInit {
     this.coursesService.remove(course._id).subscribe(
       () => {
         this.refresh();
-        this.snackbar.open('Curso removido com sucesso!', 'X', {
+        this.snackBar.open('Curso removido com sucesso!', 'X', {
           duration: 5000,
           verticalPosition: 'top',
-          horizontalPosition: 'center',
+          horizontalPosition: 'center'
         });
       },
       () => this.onError('Erro ao tentar remover curso.')
